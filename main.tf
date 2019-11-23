@@ -48,7 +48,7 @@ resource "aws_lambda_function" "datadog_forwarder" {
   description                    = "AWS Lambda to forward logs to Datadog"
   filename                       = local.output_file
   source_code_hash               = data.archive_file.datadog_forwarder.output_base64sha256
-  function_name                  = "datadog-log-monitoring-function"
+  function_name                  = "datadog-log-monitoring-function-${var.environment}"
   role                           = aws_iam_role.lambda_execution_role.arn
   handler                        = "lambda_function.lambda_handler"
   runtime                        = "python2.7"

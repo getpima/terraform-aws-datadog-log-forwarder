@@ -3,6 +3,12 @@ variable "datadog_key" {
   description = "API Key used to ship logs (https://app.datadoghq.com/account/settings#api)"
 }
 
+variable "environment" {
+  type        = string
+  description = "Environment prefix"
+  default     = "default"
+}
+
 variable "reserved_concurrent_executions" {
   type        = string
   description = "Number of reserved concurrent executions (default 10)"
